@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:photo_view/photo_view.dart';
 // import 'package:photo_view/photo_view.dart';
 
 class ImagesPage extends StatefulWidget {
@@ -22,9 +23,10 @@ class _ImagesPageState extends State<ImagesPage> {
         title: Text("Birthday Decoration Images"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(child: Image.asset("assets/images/${img}.png")),
-      ),
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+              child: PhotoView(
+                  imageProvider: AssetImage("assets/images/$img.png")))),
     );
   }
 }
